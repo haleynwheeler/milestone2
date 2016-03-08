@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-var tilEntries = []
+var tilEntries = [
   {slug: "TIL: March 5, 2016", body: "stuff"},
   {slug: "TIL: March 5, 2016", body: "other stuff"}
 ];

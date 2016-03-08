@@ -2,9 +2,9 @@
 <%include ../head%>
 
 <ul>
-<% for( var i=0; i<til.length;i++){ %>
+<% for(var i=0; i<til.length;i++){ %>
   <li>
-    <a href = '/til/<%= i %>' ><%=til[i].title %></a>
+    <a href = '/til/<%= i %>' ><%=til[i].slug %></a>
     <a href = '/itl/<%= i %>/edit'>Edit</a>
     <a href = '/itl/<%= i %>/delete'>Delete</a>
   </li>

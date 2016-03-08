@@ -3,8 +3,8 @@ var router = express.Router();
 
 
 var tilEntries = []
-  {title: "TIL: March 5, 2016", body: "stuff"},
-  {title: "TIL: March 5, 2016", body: "other stuff"}
+  {slug: "TIL: March 5, 2016", body: "stuff"},
+  {slug: "TIL: March 5, 2016", body: "other stuff"}
 ];
 
 /* GET til listing. */
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 /*Entry form*/
 router.get('/new', function(req, res,next){
-  res.render('/til/new', {title: "Create a new TIL"});
+  res.render('til/new', {title: "Create a new TIL"});
 });
 
 /*create an entry*/
@@ -47,6 +47,10 @@ router.get('/:id/delete', function(req,res,next){
   var id = req.params.id
   tilEntries = tilEntries.slice(0,id).concat(tilEntries.slice(id+1,tilEntries.length));
   res.render('til/index', {title: 'Today I Learned', tilEntries: tilEntries});
+});
+
+router.get('/:id', function(req,res,next){
+  res.render('til/entry', {title: "An entry", entry: tilEntries[req.params.id]});
 });
 
 module.exports = router;

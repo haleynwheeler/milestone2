@@ -25,7 +25,7 @@ router.post('/', function(req,res,next){
 
 /*update entry form */
 router.get('/:id/edit', function(req,res,next){
-  res.render('til/update'),
+  res.render('til/update',
   {
     title: 'Update a TIL',
     id: req.params.id,

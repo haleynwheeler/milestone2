@@ -3,8 +3,8 @@ var router = express.Router();
 
 
 var tilEntries = [
-  {slug: "TIL: March 5, 2016", body: "stuff"},
-  {slug: "TIL: March 5, 2016", body: "other stuff"}
+  {slug: "TIL: March 5, 2016", body: "TIL that I don't have work on monday. Hooray."},
+  {slug: "TIL: March 7, 2016", body: "TIL that extra parentheses can cause quite the headache. Also, I'm super good at Stardew Valley."}
 ];
 
 /* GET til listing. */

@@ -3,13 +3,13 @@ var router = express.Router();
 
 
 var tilEntries = [
-  {slug: "TIL: March 5, 2016", body: "TIL that I don't have work on monday. Hooray."},
-  {slug: "TIL: March 7, 2016", body: "TIL that extra parentheses can cause quite the headache. Also, I'm super good at Stardew Valley."}
+  {slug: "March 5, 2016", body: "TIL that I don't have work on monday. Hooray."},
+  {slug: "March 7, 2016", body: "TIL that extra parentheses can cause quite the headache. Also, I'm super good at Stardew Valley."}
 ];
 
 /* GET til listing. */
 router.get('/', function(req, res, next) {
-  res.render('til/index', { title: 'Today I Learned',til:tilEntries });
+  res.render('til/index', { title: 'Today I Learned',tilEntries:tilEntries });
 });
 
 /*Entry form*/
@@ -19,8 +19,8 @@ router.get('/new', function(req, res,next){
 
 /*create an entry*/
 router.post('/', function(req,res,next){
-  entries.push(req.body);
-  res.render('til/index', {title: 'Today I Learned', til: tilEntries});
+  tilEntries.push(req.body);
+  res.render('til/index', {title: 'Today I Learned', tilEntries: tilEntries});
 });
 
 /*update entry form */
